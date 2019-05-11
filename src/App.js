@@ -17,11 +17,13 @@ class App extends React.PureComponent {
 
   responseGoogle(response) {
     const res = response.profileObj;
-    this.setState({
-      imgSrc: res.imageUrl,
-      name: res.name,
-      email: res.email
-    });
+    if (typeof res !== 'undefined') {
+      this.setState({
+        imgSrc: res.imageUrl,
+        name: res.name,
+        email: res.email
+      });
+    }
   }
 
   render () {
